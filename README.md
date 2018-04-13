@@ -1,5 +1,5 @@
-# droneexport
-Automatically exports pictures and videos from a DJI brand drone.
+# DJI Drone Export
+Automatically exports pictures and videos with little user input from a DJI brand drone.
 
 Pretty self-explanatory.  Simply enter whatever drive letter the files on your drone are located.  Next, enter the drive you want to export them to and a folder name.
 
