@@ -59,7 +59,7 @@ elif confirm.lower() == "y":
             if i not in os.listdir(vid_dir):
                 print("Moving " + i)
                 shutil.move(path_to_files + i, vid_dir + i)
-                vids += 1
+                videos += 1
             else:
                 conflict = 1
                 rename = 1
@@ -75,7 +75,7 @@ elif confirm.lower() == "y":
                 os.rename(path_to_files + i, path_to_files + k)
                 print("Moving " + k)
                 shutil.move(path_to_files + k, vid_dir + k)
-                vids += 1
+                videos += 1
     print("\nMoved {} pictures and {} videos to '".format(pics, videos) + output_dir + "/'.")
 else:
     print("\n\nPlease restart the program and enter only Y or N.\n\n")
