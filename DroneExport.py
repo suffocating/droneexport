@@ -26,12 +26,40 @@ elif confirm.lower() == "y":
     if export_name not in os.listdir(output_letter):
         print("Output directory not found.  Creating...")
         os.makedirs(output_letter + export_name)
-        if year not in os.listdir(output_letter + "/" + export_name):
-            os.makedirs(output_letter + "/" + export_name + "/" + year)
-        if today not in os.listdir(output_letter + "/" + export_name + "/" + year):
-            os.makedirs(output_letter + "/" + export_name + "/" + year + "/" + today)
+        if year not in os.listdir(output_letter + export_name):
+            print("Year folder not found, making it.")
+            print(str(output_letter + export_name + "/" + year))
+            os.makedirs(output_letter + export_name + "/" + year)
+        if today not in os.listdir(output_letter + export_name + "/" + year):
+            print("Today's folder not found, making it.")
+            print(str(output_letter + export_name + "/" + year + "/" + today))
+            os.makedirs(output_letter + export_name + "/" + year + "/" + today)
+        if pic_dir not in os.listdir(output_letter + export_name + "/" + year + "/" + today):
+            print("Picture folder not found, making it.")
+            print(str(pic_dir))
+            os.makedirs(pic_dir)
+        if vid_dir not in os.listdir(output_letter + export_name + "/" + year + "/" + today):
+            print("Video folder not found, making it.")
+            print(str(vid_dir))
+            os.makedirs(vid_dir)
     else:
-        print("\nOutput directory found.  Exporting files now.\n")
+        if year not in os.listdir(output_letter + export_name):
+            print("Year folder not found, making it.")
+            print(str(output_letter + export_name + "/" + year))
+            os.makedirs(output_letter + export_name + "/" + year)
+        if today not in os.listdir(output_letter + export_name + "/" + year):
+            print("Today's folder not found, making it.")
+            print(str(output_letter + export_name + "/" + year + "/" + today))
+            os.makedirs(output_letter + export_name + "/" + year + "/" + today)
+        if pic_dir not in os.listdir(output_letter + export_name + "/" + year + "/" + today):
+            print("Picture folder not found, making it.")
+            print(str(pic_dir))
+            os.makedirs(pic_dir)
+        if vid_dir not in os.listdir(output_letter + export_name + "/" + year + "/" + today):
+            print("Video folder not found, making it.")
+            print(str(vid_dir))
+            os.makedirs(vid_dir)
+        print("\nExporting files now.\n")
 
     for i in os.listdir(path_to_files):
         if ".JPG" in i or ".DNG" in i:
